@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.nosotros-container {
+  min-height: 70vh;
+}
+
 .description p {
   margin: 2rem 0;
 }

@@ -5,7 +5,27 @@ import styles from "../../styles/tienda.css";
 
 export async function loader({ params }) {
   const guitarra = await getGuitarra(params.guitarraUrl);
+  if (guitarra.data.length === 0) {
+    throw new Response("", {
+      status: 404,
+      statusText: "Guitarra no encontrada",
+    });
+  }
   return guitarra.data;
+}
+
+export function meta({ data }) {
+  if (!data) {
+    return {
+      title: `Entrada no encontrada`,
+      description: `Guitarra no encontrada`,
+    };
+  }
+
+  return {
+    title: `Guitar LA - ${data[0].attributes.titulo}`,
+    description: `Ver más información de la guitarra ${data[0].attributes.titulo} `,
+  };
 }
 
 export function links() {
@@ -19,10 +39,8 @@ export function links() {
 
 const Guitarra = () => {
   const guitarra = useLoaderData();
-  const { titulo, createdAT, contenido, precio, url, imagen } =
-    guitarra[0].attributes;
+  const { titulo, contenido, precio, imagen } = guitarra[0].attributes;
 
-  console.log(imagen);
   return (
     <main className="container-guitarra guitarra-sola">
       <div className="img-wrap">

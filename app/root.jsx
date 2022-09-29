@@ -5,6 +5,8 @@ const {
   Outlet,
   Scripts,
   ScrollRestoration,
+  Link,
+  useCatch,
 } = require("@remix-run/react");
 import styles from "./styles/index.css";
 import Header from "./components/header";
@@ -21,7 +23,7 @@ export function links() {
 
 export const meta = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "Guitar LA",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -50,5 +52,39 @@ function Document({ children }) {
         <Footer />
       </body>
     </html>
+  );
+}
+
+export function CatchBoundary() {
+  const error = useCatch();
+
+  console.log(error);
+  return (
+    <Document>
+      <LiveReload />
+      <p className="error">
+        {error.status} {error.statusText}
+      </p>
+
+      <Link className="error-enlace" to="/">
+        Tal vez quieras volver a la página principal
+      </Link>
+      <LiveReload />
+    </Document>
+  );
+}
+
+export function ErorBoundary({ error }) {
+  return (
+    <Document>
+      <LiveReload />
+      <p className="error">
+        {error.status} {error.statusText}
+      </p>
+
+      <Link className="error-enlace" to="/">
+        Tal vez quieras volver a la página principal
+      </Link>
+    </Document>
   );
 }
