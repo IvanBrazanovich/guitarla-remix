@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+}
+
+.description p {
+  margin: 2rem 0;
+}
+
+.img-wrapper {
+  min-width: 40rem;
+}
+@media (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
