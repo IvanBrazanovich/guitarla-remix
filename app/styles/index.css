@@ -19,7 +19,7 @@ html {
 
 [class*="contenedor"],
 main {
-  width: min(95%, 120rem);
+  width: min(95%, 130rem);
   margin: 3rem auto;
 }
 
@@ -127,7 +127,6 @@ img {
 }
 
 .error-enlace {
-  text-decoration: none;
   color: var(--primary);
   font-weight: 500;
 }
