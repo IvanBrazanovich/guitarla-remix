@@ -1,0 +1,74 @@
+.guitarra-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+}
+
+@media (min-width: 992px) {
+  .guitarra-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .guitarra-container .heading {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .guitarra-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .guitarra-container .heading {
+    font-size: 4rem;
+  }
+}
+
+.container-guitarra {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.img-wrap {
+  flex-shrink: 1;
+}
+
+.container-info {
+  flex-shrink: 2;
+}
+
+.container-guitarra .contenido {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.guitarra-button {
+  padding: 1rem;
+  background-color: var(--black);
+  text-transform: uppercase;
+  color: var(--white);
+  font-weight: 900;
+  margin: 2rem 0;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.guitarra-button:hover {
+  background-color: var(--primary);
+  color: var(--black);
+}
+
+.precio {
+  font-size: 3rem;
+  color: var(--primary);
+  font-weight: 900;
+  margin: 1rem 0;
+}

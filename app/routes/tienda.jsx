@@ -1,7 +1,41 @@
 import React from "react";
+import { useLoaderData } from "@remix-run/react";
+import { getGuitarras } from "~/models/guitarras.server";
+import Guitarra from "~/components/guitarra";
+import styles from "../styles/tienda.css";
+
+export async function loader() {
+  const respuesta = await getGuitarras();
+  return respuesta.data;
+}
+
+export function links() {
+  return [
+    {
+      rel: "stylesheet",
+      href: styles,
+    },
+  ];
+}
 
 const Tienda = () => {
-  return <div>Tienda</div>;
+  const guitarras = useLoaderData();
+  console.log(guitarras);
+  return (
+    <main>
+      <h3 className="heading">Nuestra Colección</h3>
+      <div className=" guitarra-container">
+        {guitarras.map((guitarra) => {
+          return (
+            <Guitarra
+              key={guitarra.attributes.url}
+              guitarra={guitarra.attributes}
+            />
+          );
+        })}
+      </div>
+    </main>
+  );
 };
 
 export default Tienda;
