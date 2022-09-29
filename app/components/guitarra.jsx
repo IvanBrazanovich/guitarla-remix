@@ -5,7 +5,7 @@ const Guitarra = ({ guitarra }) => {
   //Destructuring
   const { titulo, createdAT, contenido, precio, url, imagen } = guitarra;
   return (
-    <div className="container-guitarra">
+    <div className="container-guitarra ">
       <div className="img-wrap">
         <img src={imagen.data.attributes.formats?.small.url} alt="" />
       </div>
