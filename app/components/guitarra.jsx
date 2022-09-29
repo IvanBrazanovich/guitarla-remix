@@ -1,11 +1,9 @@
+import { Link } from "@remix-run/react";
 import React from "react";
 
 const Guitarra = ({ guitarra }) => {
-  console.log(guitarra);
   //Destructuring
   const { titulo, createdAT, contenido, precio, url, imagen } = guitarra;
-  console.log(imagen);
-  console.log(imagen.data.attributes.formats.small);
   return (
     <div className="container-guitarra">
       <div className="img-wrap">
@@ -16,7 +14,9 @@ const Guitarra = ({ guitarra }) => {
         <h3 className="heading">{titulo}</h3>
         <p className="contenido">{contenido}</p>
         <p className="precio">${precio}</p>
-        <button className="guitarra-button">Ver Producto</button>
+        <Link to={`/guitarras/${url}`} className="guitarra-button">
+          Ver Producto
+        </Link>
       </div>
     </div>
   );

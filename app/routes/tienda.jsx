@@ -20,7 +20,6 @@ export function links() {
 
 const Tienda = () => {
   const guitarras = useLoaderData();
-  console.log(guitarras);
   return (
     <main>
       <h3 className="heading">Nuestra Colección</h3>

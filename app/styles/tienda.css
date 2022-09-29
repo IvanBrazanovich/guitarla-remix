@@ -29,6 +29,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding: 2rem;
 }
 
 .img-wrap {
@@ -53,17 +54,17 @@
   background-color: var(--black);
   text-transform: uppercase;
   color: var(--white);
-  font-weight: 900;
-  margin: 2rem 0;
-  width: 100%;
+  font-weight: 700;
+  display: block;
+  text-align: center;
   cursor: pointer;
   border: none;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .guitarra-button:hover {
   background-color: var(--primary);
-  color: var(--black);
 }
 
 .precio {
