@@ -17,7 +17,7 @@ export async function loader({ params }) {
 export function meta({ data }) {
   if (!data) {
     return {
-      title: `Entrada no encontrada`,
+      title: `Guitar LA - Entrada no encontrada`,
       description: `Guitarra no encontrada`,
     };
   }

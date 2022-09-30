@@ -15,7 +15,7 @@ const Blog = ({ blog }) => {
         <p className="fecha">{fecha}</p>
         <p className="contenido">{content}</p>
 
-        <Link to={`/blog/${url}`} className="blog-button">
+        <Link to={`/blogs/${url}`} className="blog-button">
           Ver Blog
         </Link>
       </div>

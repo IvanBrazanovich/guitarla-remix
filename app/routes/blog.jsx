@@ -9,6 +9,13 @@ export async function loader() {
   return respuesta.data;
 }
 
+export function meta() {
+  return {
+    title: "Guitar LA - BLOG",
+    description: "Nuestro blog",
+  };
+}
+
 export function links() {
   return [
     {
